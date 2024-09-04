@@ -144,6 +144,7 @@ annotation(fig3,'textbox',...
     'EdgeColor','none');
 
 exportgraphics(fig3, "RelativeBias.jpg", 'Resolution', 300);
+
 function params = initializeParameters()
     params = struct;
     params.beta = 0.3;

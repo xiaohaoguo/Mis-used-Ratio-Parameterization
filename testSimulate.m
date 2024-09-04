@@ -22,6 +22,16 @@ N0 = 1e5;
 I0 = 70;
 A0 = 30;
 
+% %% for models of one ratio $\alpha$ plus one period $1/\gamma$
+% params1 = params;
+% params1.dE2A = params.pE2A * params.dE2A + (1-params.pE2A) * params.dE2I;
+% params1.dE2I = params1.dE2A;
+% params1.dI2R = params.pI2R * params.dI2R + (1-params.pI2R) * params.dI2H;
+% params1.dI2H = params1.dI2R;
+% params1.dI2H = 1;
+% params1.dI2R = 10;
+% md1 = OrigionalModel('Params', params1, 'x0', [N0, 0, I0, A0, 0, 0]');
+
 md1 = OrigionalModel('Params', params, 'x0', [N0, 0, I0, A0, 0, 0]');
 md2 = ImprovedModel('Params', params, 'x0', [N0, 0, 0, I0 * params.pI2R, I0 * (1-params.pI2R), A0, 0, 0]');
 md3 = ComplexModel('Params', params, "N", N0, "I", I0, 'A', A0);

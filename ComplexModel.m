@@ -170,7 +170,7 @@ classdef ComplexModel < handle
             info.A = sum(md.stage == 4);
             info.R = sum(md.stage == 5);
             info.H = sum(md.stage == 6);
-            info.InfectionRates = sum(isInfected);
+            info.InfectionRates = sum(isInfected) / md.dt;
             info.newI = sum(idxE2Ied);
             info.newA = sum(idxE2Aed);
             info.newR = sum(idxI2Red | idxA2Red | idxH2Red);

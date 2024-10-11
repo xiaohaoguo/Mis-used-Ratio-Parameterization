@@ -36,6 +36,7 @@ md1 = OrigionalModel('Params', params, 'x0', [N0, 0, I0, A0, 0, 0]');
 md2 = ImprovedModel('Params', params, 'x0', [N0, 0, 0, I0 * params.pI2R, I0 * (1-params.pI2R), A0, 0, 0]');
 md3 = ComplexModel('Params', params, "N", N0, "I", I0, 'A', A0);
 
+
 solve(md1);
 solve(md2);
 

@@ -61,7 +61,6 @@ classdef ComplexModel < handle
             tI = md.dt * ones(size(md.stage));
             tA = md.dt * ones(size(md.stage));
 
-
             % H to R
             idxDevelopedH2R = md.duration + md.dt >= md.params.dH2R;
             idxH2Red = idxH & idxDevelopedH2R;
